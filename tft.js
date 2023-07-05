@@ -217,11 +217,11 @@ totalexistedSlider.addEventListener('input', function () {
 });
 
 function updateChart() {
-  const level = parseInt(levelSlider.value);
-  const tier = parseInt(tierSlider.value);
-  const required = parseInt(requiredSlider.value);
-  const exisited = parseInt(exisitedSlider.value);
-  const totalexisted = parseInt(totalexistedSlider.value);
+  var level = parseInt(levelSlider.value);
+  var tier = parseInt(tierSlider.value);
+  var required = parseInt(requiredSlider.value);
+  var exisited = parseInt(exisitedSlider.value);
+  var totalexisted = parseInt(totalexistedSlider.value);
 
     if (level >= 7) {
       tierSlider.setAttribute('max', '5');
@@ -235,12 +235,25 @@ function updateChart() {
         tierSlider.setAttribute('max', '1');
     } 
     
-    requiredSlider.setAttribute('max', REROLL[0][tier - 1].toString());
-    exisitedSlider.setAttribute('max', (REROLL[0][tier - 1] - required).toString());
-    
+    var d = REROLL[0][tier - 1] - exisited
+    if(d > 9){
+        d = 9;
+    }
+    requiredSlider.setAttribute('max', d.toString());
+    exisitedSlider.setAttribute('max', (REROLL[0][tier - 1] - d).toString());
+    if(exisited + required > REROLL[0][tier - 1]){
+        exisitedSlider.value = REROLL[0][tier - 1] - required;
+        exisited = REROLL[0][tier - 1] - required;
+        console.log(exisitedSlider.value);
+        exisitedValue.textContent = exisitedSlider.value;
+        // exisitedValue.textContent = 0;
+        // requiredSlider.value = 0;
+        // exisited = required = 0;
+    }
   
   ShowPlot(level, tier, required, exisited, totalexisted);
 }
+ShowPlot(1, 1, 1, 0, 0);
 // ShowPlot(4, 1, 1, 1, 7);
 // ShowPlot(9, 5, 6, 3, 12);
 
