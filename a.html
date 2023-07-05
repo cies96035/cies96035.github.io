@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Input Sliders Example</title>
+    <style>
+      .slider-container {
+        margin-bottom: 20px;
+      }
+      .slider-label {
+        display: inline-block;
+        width: 120px;
+      }
+      .slider-value {
+        display: inline-block;
+        width: 40px;
+      }
+      input[type='range'] {
+        width: 300px;
+      }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation"></script>
+
+  </head>
+  <body>
+    <div class="slider-container">
+      <label class="slider-label" for="level-slider">Level:</label>
+      <input type="range" id="level-slider" min="1" max="9" value="1" step="1" />
+      <span class="slider-value" id="level-value">1</span>
+    </div>
+    <div class="slider-container">
+      <label class="slider-label" for="tier-slider">Tier:</label>
+      <input type="range" id="tier-slider" min="1" max="5" value="1" step="1" />
+      <span class="slider-value" id="tier-value">1</span>
+    </div>
+    <div class="slider-container">
+      <label class="slider-label" for="required-slider">Required:</label>
+      <input type="range" id="required-slider" min="1" max="9" value="1" step="1" />
+      <span class="slider-value" id="required-value">1</span>
+    </div>
+    <div class="slider-container">
+      <label class="slider-label" for="exisited-slider">Exisited:</label>
+      <input type="range" id="exisited-slider" min="0" max="10" value="0" step="1" />
+      <span class="slider-value" id="exisited-value">0</span>
+    </div>
+    <div class="slider-container">
+      <label class="slider-label" for="totalexisted-slider">Total Exisited:</label>
+      <input type="range" id="totalexisted-slider" min="0" max="100" value="0" step="1" />
+      <span class="slider-value" id="totalexisted-value">0</span>
+    </div>
+    <canvas id="myChart"></canvas>
+    <script src="tft.js"></script>
+  </body>
+</html>
