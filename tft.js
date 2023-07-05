@@ -240,7 +240,7 @@ function updateChart() {
         d = 9;
     }
     requiredSlider.setAttribute('max', d.toString());
-    exisitedSlider.setAttribute('max', (REROLL[0][tier - 1] - d).toString());
+    exisitedSlider.setAttribute('max', (REROLL[0][tier - 1] - required).toString());
     if(exisited + required > REROLL[0][tier - 1]){
         exisitedSlider.value = REROLL[0][tier - 1] - required;
         exisited = REROLL[0][tier - 1] - required;
