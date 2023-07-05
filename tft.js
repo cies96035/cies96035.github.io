@@ -51,7 +51,7 @@ function ExpDraw(remain, total, tier_p, required) {
 
     cur[0] = 1;
     let j = 1;
-    while (j % 20 !== 0 || cdf[cdf.length - 1] < 0.5) {
+    while (j % 20 !== 0 || cdf[cdf.length - 1] < 0.999) {
         for (let i = 0; i <= required; i++) {
             for (let k = 0; k <= 5; k++) {
                 const nxState = i + k <= required ? i + k : required;
