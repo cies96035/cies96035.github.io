@@ -92,14 +92,6 @@ function ShowPlot(level, tier, required, exisited, totalexisted) {
             labels: Array.from(Array(l.length).keys()),
             datasets: [
                 {
-                    label: 'PMF',
-                    data: l,
-                    backgroundColor: 'rgba(0, 123, 255, 0.8)',
-                    borderColor: 'rgba(0, 123, 255, 1)',
-                    borderWidth: 1,
-                    yAxisID: 'y'
-                },
-                {
                     label: 'CDF',
                     data: d,
                     type: 'line',
@@ -107,6 +99,14 @@ function ShowPlot(level, tier, required, exisited, totalexisted) {
                     borderColor: 'rgba(255, 0, 0, 1)',
                     tension: 0,
                     yAxisID: 'y1'
+                },
+                {
+                    label: 'PMF',
+                    data: l,
+                    backgroundColor: 'rgba(0, 123, 255, 0.8)',
+                    borderColor: 'rgba(0, 123, 255, 1)',
+                    borderWidth: 1,
+                    yAxisID: 'y'
                 }
                 // {
                 //     label: 'Expect',
@@ -253,7 +253,7 @@ function updateChart() {
   
   ShowPlot(level, tier, required, exisited, totalexisted);
 }
-ShowPlot(1, 1, 1, 0, 0);
+ShowPlot(8, 4, 6, 3, 30);
 // ShowPlot(4, 1, 1, 1, 7);
 // ShowPlot(9, 5, 6, 3, 12);
 
