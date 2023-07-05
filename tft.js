@@ -223,6 +223,22 @@ function updateChart() {
   const exisited = parseInt(exisitedSlider.value);
   const totalexisted = parseInt(totalexistedSlider.value);
 
+    if (level >= 7) {
+      tierSlider.setAttribute('max', '5');
+    } else if (level >= 5) {
+      tierSlider.setAttribute('max', '4');
+    } else if (level >= 4) {
+      tierSlider.setAttribute('max', '3');
+    } else if (level >= 3) {
+        tierSlider.setAttribute('max', '2');
+  }else if (level >= 1) {
+        tierSlider.setAttribute('max', '1');
+    } 
+    
+    requiredSlider.setAttribute('max', REROLL[0][tier - 1].toString());
+    exisitedSlider.setAttribute('max', (REROLL[0][tier - 1] - required).toString());
+    
+  
   ShowPlot(level, tier, required, exisited, totalexisted);
 }
 // ShowPlot(4, 1, 1, 1, 7);
